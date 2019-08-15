@@ -1,32 +1,32 @@
 "use strict";
 // string 
-var nome = 'João';
+let nome = 'João';
 console.log(nome);
 // Não podemos mudar o tipo, eles sao inseridos sozinhos
 //nome = 28
 // numbers
-var idade = 27;
+let idade = 27;
 console.log(idade);
 //ponto flutuante nao tem problema
 idade = 27.5;
 console.log(idade);
 //boolean
-var possuiHobbies = false;
+let possuiHobbies = false;
 console.log(possuiHobbies);
 // tipos explicitos
-var minhaIdade;
+let minhaIdade;
 minhaIdade = 27;
 console.log(typeof minhaIdade);
 minhaIdade = '27';
 console.log(typeof minhaIdade);
 // array
-var hobbies = ["Cozinhar", "Praticar Esportes"];
+let hobbies = ["Cozinhar", "Praticar Esportes"];
 console.log(hobbies[0]);
 console.log(typeof hobbies);
 hobbies = [100];
 console.log(hobbies);
 // tuplas
-var endereco = ["Av Princiapal", 99, ""];
+let endereco = ["Av Princiapal", 99, ""];
 console.log(endereco);
 endereco = ["Rua Import", 77, "Bloco a"];
 console.log(endereco);
@@ -37,10 +37,10 @@ var Cor;
     Cor[Cor["Verde"] = 1] = "Verde";
     Cor[Cor["Azul"] = 2] = "Azul";
 })(Cor || (Cor = {}));
-var minhaCor = Cor.Verde;
+let minhaCor = Cor.Verde;
 console.log(minhaCor);
 // any
-var carro = 'BMW';
+let carro = 'BMW';
 console.log(carro);
 carro = { marca: 'BMW', ano: 2019 };
 console.log(carro);
@@ -57,11 +57,11 @@ function multiplicar(numA, numB) {
     return numA * numB;
 }
 console.log(multiplicar(2, 4));
-var teste = function (a, b) {
+const teste = function (a, b) {
     return false;
 };
 // tipo função
-var calculo;
+let calculo;
 /*
 calculo = digaOi
 calculo()
@@ -69,7 +69,7 @@ calculo()
 calculo = multiplicar;
 console.log(calculo(2, 5));
 //objetos
-var usuario = {
+let usuario = {
     nome: 'João',
     idade: 27
 };
@@ -84,9 +84,9 @@ usuario = {
     nome: 'Maria',
     idade: 27
 };
-var funcionario = {
+let funcionario = {
     supervisores: ['Ana', 'Fernando'],
-    baterPonto: function (horario) {
+    baterPonto(horario) {
         if (horario <= 8) {
             return 'Ponto Normal';
         }
@@ -99,9 +99,9 @@ console.log(funcionario.supervisores);
 console.log(funcionario.baterPonto(8));
 console.log(funcionario.baterPonto(9));
 console.log(funcionario.baterPonto(5));
-var funcionario2 = {
+let funcionario2 = {
     supervisores: ['Bia', 'Carlo'],
-    baterPonto: function (horario) {
+    baterPonto(horario) {
         if (horario <= 8) {
             return 'Ponto Normal';
         }
@@ -111,12 +111,12 @@ var funcionario2 = {
     }
 };
 //Union Types
-var nota = 10;
-console.log("Minha nota \u00E9 " + nota + "!");
+let nota = 10;
+console.log(`Minha nota é ${nota}!`);
 nota = '9';
-console.log("Minha nota \u00E9 " + nota + "!");
+console.log(`Minha nota é ${nota}!`);
 // Checando tipos
-var valor = 30;
+let valor = 30;
 if (typeof valor == "number") {
     console.log("é number");
 }
@@ -127,10 +127,10 @@ else {
 function falha(msg) {
     throw new Error(msg);
 }
-var produto = {
+const produto = {
     nome: 'Sabão',
     preco: 44,
-    validarProduto: function () {
+    validarProduto() {
         if (!this.nome || this.nome.trim().length == 0) {
             falha('Precisa ter um nome');
         }
@@ -140,11 +140,11 @@ var produto = {
     }
 };
 produto.validarProduto();
-var altura = 12;
+let altura = 12;
 //altura = null
-var alturaOpcional = 12;
+let alturaOpcional = 12;
 alturaOpcional = null;
-var contato1 = {
+const contato1 = {
     nome: 'Fulano',
     tel1: '98765432',
     tel2: null
@@ -152,19 +152,20 @@ var contato1 = {
 console.log(contato1.nome);
 console.log(contato1.tel1);
 console.log(contato1.tel2);
-var poderSerNulo = null;
+let poderSerNulo = null;
 poderSerNulo = 123;
 poderSerNulo = 'Abc';
-var contaBancaria = {
+let contaBancaria = {
     saldo: 3456,
-    depositar: function (valor) {
+    depositar(valor) {
         this.saldo += valor;
     }
 };
-var correntista = {
+let correntista = {
     nome: 'Ana Silva',
     contaBancaria: contaBancaria,
     contatos: ['34567890', '98765432']
 };
 correntista.contaBancaria.depositar(3000);
 console.log(correntista);
+//# sourceMappingURL=tipos.js.map
