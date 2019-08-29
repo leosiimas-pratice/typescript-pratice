@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/leosiimas-pratice/typescript-pratice#readme",
   "dependencies": {
-    "live-server": "^1.2.1"
+    "@types/node": "^12.7.2",
+    "live-server": "^1.2.1",
+    "systemjs": "^0.21.5"
   }
 }

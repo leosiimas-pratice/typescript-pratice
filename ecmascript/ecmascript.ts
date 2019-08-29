@@ -56,7 +56,7 @@ falarCom('João')
 //normalComThisEspecial()
 
 // this??
-console.log(this)
+//console.log(this)
 //const arrowComThis = () => console.log(this)
 //arrowComThis()
 
@@ -165,10 +165,35 @@ console.log(primeiroNome, experiencia)
 
 // Callback
 
-function esperar3s(callback){
+function esperar3s(callback: (dado: string) => void){
     setTimeout(() => {
         callback('3s depois')        
     }, 3000)
 }
 
-esperar3s()
+esperar3s(function(resultado: string) {
+    console.log(resultado)
+})
+
+
+//Promise
+
+function esperar3sPromise(){
+    return new Promise((resolve: any) => {
+        setTimeout(() => {
+            resolve('3s depois Promise')        
+        }, 3000)
+    })
+}
+
+esperar3sPromise()
+    .then(dado => console.log(dado))
+
+
+fetch('https://swapi.co/api/people/1')
+    .then(res => res.json())    
+    .then(personagem => personagem.films)
+    .then(films => fetch(films[0]))
+    .then(resFilm => resFilm.json())
+    .then(filme => console.log(filme.title))
+    .catch(err => console.log('Catch !!!!!' + err))

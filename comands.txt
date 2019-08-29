@@ -1,0 +1,2 @@
+Auto Copilar: tsc -w
+Iniciar Servidor: npm start
